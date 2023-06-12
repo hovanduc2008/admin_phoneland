@@ -12,7 +12,6 @@ function FormAccount({ onClose, id }) {
             const response = await getbyid(id);
             setCustomer(response.data[0]);
             setOrder(response.orders);
-            console.log(response);
         };
         fetchData();
     }, [id]);

@@ -15,50 +15,6 @@ import { v4 } from 'uuid';
 
 const cx = classNames.bind(styles);
 
-const dataOrder = [
-    {
-        id: 1,
-        user: 'Van Duc',
-        bookingDate: '13/07/2005',
-        status: 'Chờ xác nhận',
-    },
-    {
-        id: 2,
-        user: 'Trang',
-        bookingDate: '14/07/2005',
-        status: 'Đã xác nhận',
-    },
-    {
-        id: 3,
-        user: 'Hoang',
-        bookingDate: '15/07/2005',
-        status: 'Đã xác nhận',
-    },
-    {
-        id: 4,
-        user: 'An',
-        bookingDate: '16/07/2005',
-        status: 'Chờ xác nhận',
-    },
-    {
-        id: 5,
-        user: 'Linh',
-        bookingDate: '17/07/2005',
-        status: 'Chờ xác nhận',
-    },
-    {
-        id: 6,
-        user: 'Nam',
-        bookingDate: '18/07/2005',
-        status: 'Đã xác nhận',
-    },
-    {
-        id: 7,
-        user: 'Tung',
-        bookingDate: '19/07/2005',
-        status: 'Chờ xác nhận',
-    },
-];
 
 const tableTitle = (
     <div className={cx('order')}>

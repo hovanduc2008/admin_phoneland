@@ -42,7 +42,7 @@ function Cards() {
                 parseInt(countUsers.yesterday_count) === 0 && parseInt(countUsers.today_count) === 0
                     ? '0'
                     : (countUsers.today_count / countUsers.yesterday_count) * 100,
-            value: countUsers.today_count,
+            value: new Intl.NumberFormat('vi-VN').format(countUsers.today_count),
             Icon: faUser,
         },
         {
@@ -54,8 +54,11 @@ function Cards() {
             barValue:
                 (parseInt(countOrders.today_total_amount) === 0 && parseInt(countOrders.yesterday_total_amount)) === 0
                     ? '0'
-                    : (parseInt(countOrders.today_total_amount) / parseInt(countOrders.yesterday_total_amount)) * 100,
-            value: countOrders.today_total_amount,
+                    : (
+                          (parseInt(countOrders.today_total_amount) / parseInt(countOrders.yesterday_total_amount)) *
+                          100
+                      ).toFixed(2),
+            value: new Intl.NumberFormat('vi-VN').format(countOrders.today_total_amount) + 'đ',
             Icon: faMoneyBill,
         },
         {
@@ -67,8 +70,11 @@ function Cards() {
             barValue:
                 (parseInt(countOrders.today_order_count) === 0 && parseInt(countOrders.yesterday_order_count)) === 0
                     ? '0'
-                    : (parseInt(countOrders.today_order_count) / parseInt(countOrders.yesterday_order_count)) * 100,
-            value: countOrders.today_order_count,
+                    : (
+                          (parseInt(countOrders.today_order_count) / parseInt(countOrders.yesterday_order_count)) *
+                          100
+                      ).toFixed(2),
+            value: new Intl.NumberFormat('vi-VN').format(countOrders.today_order_count),
             Icon: faTruck,
         },
     ];

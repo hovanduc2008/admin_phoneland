@@ -54,7 +54,12 @@ function Ranking({ title }) {
                 <div>
                     {users.map((data, index) => {
                         return (
-                            <RankingItem key={index} top={index + 1} user={data.username} price={data.total_amount} />
+                            <RankingItem
+                                key={index}
+                                top={index + 1}
+                                user={data.username}
+                                price={new Intl.NumberFormat('vi-VN').format(data.total_amount) + 'đ'}
+                            />
                         );
                     })}
                 </div>
