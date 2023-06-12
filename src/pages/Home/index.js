@@ -15,7 +15,6 @@ import { v4 } from 'uuid';
 
 const cx = classNames.bind(styles);
 
-
 const tableTitle = (
     <div className={cx('order')}>
         <p>Mã đơn</p>
@@ -32,7 +31,11 @@ function Home() {
     useEffect(() => {
         const fetchData = async () => {
             const response = await getrecents();
-            setOrder(response.data);
+            if (response.status === 'success') {
+                setOrder(response.data);
+            } else {
+                setOrder([]);
+            }
         };
         fetchData();
     }, []);
@@ -64,7 +67,7 @@ function Home() {
                     </Table>
                 </div>
                 <div className={cx('review')}>
-                    <Ranking title="Top Mua Hàng" />
+                    <Ranking />
                     <CustomerReview />
                 </div>
             </div>

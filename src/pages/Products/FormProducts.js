@@ -138,6 +138,10 @@ function FormProducts({ onClose, title, onSuccess, id }) {
 
     function handleSubmit(event) {
         event.preventDefault();
+        if (!category || !titlex || !image || !price || !quantity) {
+            alert('Vui lòng nhập đủ thông tin danh mục, tên sản phẩm, hình ảnh, giá bán, số lượng');
+            return;
+        }
         if (id) {
             const data = {
                 id: id,

@@ -21,7 +21,11 @@ function FormArticles({ onClose, title, onSuccess, id }) {
         const fetchCate = async () => {
             try {
                 const response = await getall('', '');
-                setCategories(response.data);
+                if (response.status === 'success') {
+                    setCategories(response.data);
+                } else {
+                    setCategories([]);
+                }
             } catch (e) {
                 console.log(e);
             }
@@ -66,6 +70,10 @@ function FormArticles({ onClose, title, onSuccess, id }) {
                 content: content,
                 status: status,
             };
+            if (!category || !titlex || !image) {
+                alert('Vui lòng điền đủ thông tin danh mục, tên bài viết, hình ảnh');
+                return;
+            }
             const updateData = async () => {
                 try {
                     const fetchAPI = await update(data);
@@ -86,6 +94,7 @@ function FormArticles({ onClose, title, onSuccess, id }) {
                 content: content,
                 status: 1,
             };
+
             const postData = async () => {
                 try {
                     const fetchAPI = await create(data);
@@ -148,7 +157,13 @@ function FormArticles({ onClose, title, onSuccess, id }) {
                     </Form.Group>
                     <Form.Group controlId="content">
                         <Form.Label>Content</Form.Label>
-                        <ReactQuill value={content} onChange={(value) => setContent(value)} />
+                        <ReactQuill
+                            value={content}
+                            onChange={(value) => {
+                                console.log(typeof value);
+                                setContent(value);
+                            }}
+                        />
                     </Form.Group>
                 </Form>
             </Modal.Body>

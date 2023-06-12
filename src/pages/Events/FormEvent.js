@@ -18,7 +18,11 @@ function FormEvent({ onClose, onSuccess, title, id }) {
         const fetchCate = async () => {
             try {
                 const response = await getall('', '');
-                setCategories(response.data);
+                if (response.status === 'success') {
+                    setCategories(response.data);
+                } else {
+                    setCategories([]);
+                }
             } catch (e) {
                 console.log(e);
             }
@@ -54,6 +58,10 @@ function FormEvent({ onClose, onSuccess, title, id }) {
 
     function handleSubmit(event) {
         event.preventDefault();
+        if (!category || !image) {
+            alert('Vui nhập đủ thông tin danh mục và hình ảnh');
+            return;
+        }
         if (id) {
             const data = {
                 id: id,

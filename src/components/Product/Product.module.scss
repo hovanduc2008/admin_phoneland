@@ -4,6 +4,7 @@
     border-radius: 7px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 .img {
     display: flex;
@@ -11,6 +12,7 @@
 }
 .img img {
     object-fit: cover;
+    margin-top: 7px;
     height: 200px;
 }
 .info {

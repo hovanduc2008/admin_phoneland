@@ -8,36 +8,18 @@ import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-const datas = [
-    {
-        user: 'Van Duc',
-        price: 1000,
-    },
-    {
-        user: 'Van Duc',
-        price: 900,
-    },
-    {
-        user: 'Van Duc',
-        price: 800,
-    },
-    {
-        user: 'Van Duc',
-        price: 700,
-    },
-    {
-        user: 'Van Duc',
-        price: 600,
-    },
-];
-
-function Ranking({ title }) {
+function Ranking() {
     const [users, setUsers] = useState([]);
-
+    const [title, setTitle] = useState('');
     useEffect(() => {
+        setTitle(`Top mua hàng tháng ${new Date().getMonth() + 1}`);
         const fetchData = async () => {
             const response = await topprice();
-            setUsers(response.data);
+            if (response.status === 'success') {
+                setUsers(response.data);
+            } else {
+                setUsers([]);
+            }
         };
         fetchData();
     }, []);
