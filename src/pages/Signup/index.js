@@ -55,7 +55,7 @@ function Signup() {
             console.log(response);
 
             if (response.status === 'success') {
-                setMessage('Đăng ký thành công. Vui lòng chờ xác nhận');
+                alert('Đăng ký thành công. Vui lòng chờ xác nhận');
                 return;
             } else {
                 setError(response.message);

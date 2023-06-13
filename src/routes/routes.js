@@ -9,7 +9,6 @@ import Orders from '~/pages/Orders';
 import Products from '~/pages/Products';
 import Events from '~/pages/Events';
 import Articles from '~/pages/Articles';
-import Setting from '~/pages/Setting';
 import Categories from '~/pages/Categories';
 import Login from '~/pages/Login';
 import Signup from '~/pages/Signup';
@@ -24,7 +23,6 @@ const publicRoutes = [
     { path: config.routes.categories, component: Categories },
     { path: config.routes.products, component: Products },
     { path: config.routes.events, component: Events },
-    { path: config.routes.setting, component: Setting },
     { path: config.routes.articles, component: Articles },
 ];
 

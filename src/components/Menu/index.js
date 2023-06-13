@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import MenuItem from './MenuItem';
-import {faClipboardList, faGear, faHome, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faClipboardList, faGear, faHome, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar, faNewspaper, faClipboard, faRectangleList } from '@fortawesome/free-regular-svg-icons';
 import { NavLink } from 'react-router-dom';
 import routes from '~/config/routes';
@@ -44,11 +44,6 @@ const listMenu = [
         title: 'Articles',
         icon: faNewspaper,
         route: routes.articles,
-    },
-    {
-        title: 'Setting',
-        icon: faGear,
-        route: routes.setting,
     },
 ];
 

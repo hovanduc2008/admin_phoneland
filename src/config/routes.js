@@ -8,7 +8,6 @@ const routes = {
     products: '/products',
     events: '/events',
     articles: '/articles',
-    setting: '/setting',
     logout: '/logout',
 };
 
