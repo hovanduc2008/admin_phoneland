@@ -228,7 +228,7 @@ function FormProducts({ onClose, title, onSuccess, id }) {
 
                     <Form.Group controlId="color">
                         <Form.Label>Màu sắc (Mã màu)</Form.Label>
-                        <Form.Control type="text" value={color} onChange={handleColorChange} />
+                        <Form.Control type="color" value={color} onChange={handleColorChange} />
                     </Form.Group>
 
                     <Form.Group controlId="price">

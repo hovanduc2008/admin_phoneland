@@ -53,7 +53,7 @@ function FormFilter({ Add, search }) {
                         <Form.Control as="select" value={category} onChange={handleCategoryChange}>
                             <option value="">All</option>
                             {categories.map((item) => {
-                                return item.type === '1' ? (
+                                return item.type === '0' ? (
                                     <option key={v4()} value={item.id}>
                                         {item.name}
                                     </option>
